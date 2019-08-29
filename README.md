@@ -15,7 +15,7 @@ Windows Enviroment Setup:
 Project Setup  
   (Choosen Directory)$git clone https://github.com/jarodhine/CCJS-Career-Link  
   $python -m venv venv 
-  $venv\Scripts\activate.bat
+  $venv\Scripts\activate.bat  
   $pip install -r requirements.txt  
   $python ./manage.py syncdb  
   $python ./manage.py migrate  

@@ -17,6 +17,6 @@ Project Setup
   $python -m venv venv 
   $venv\Scripts\activate.bat  
   $pip install -r requirements.txt  
-  $python ./manage.py syncdb  
-  $python ./manage.py migrate  
-  $python ./manage.py runserver  
+  $python manage.py syncdb  
+  $python manage.py migrate  
+  $python manage.py runserver  

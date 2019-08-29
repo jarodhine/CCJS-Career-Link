@@ -11,12 +11,11 @@ Windows Enviroment Setup:
   Download get-pip.py  
   $python get-pip.py  
   $python -m pip install --upgrade pip  
-  $pip install virtualenv  
 
 Project Setup  
   (Choosen Directory)$git clone https://github.com/jarodhine/CCJS-Career-Link  
-  $virtualenv --no-site-packages  
-  $source env/bin/activate  
+  $python -m venv venv 
+  $source venv/bin/activate  
   $pip install -r requirements.txt  
   $python ./manage.py syncdb  
   $python ./manage.py migrate  

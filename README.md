@@ -20,9 +20,3 @@ Project Setup
   $python manage.py syncdb  
   $python manage.py migrate  
   $python manage.py runserver  
-
-
-Credentials
-  username:password
-  admin:Password123
-  JohnDoe:JohnDoeCCJS123

@@ -2,11 +2,27 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm
+from django.http import HttpResponse
 
 # Create your views here.
 
+# for index pages
+
 def indexView(request):
     return render(request, 'index.html')
+
+def searchView(request):
+    return render(request, "search.html")
+
+def profileView(request):
+    return render(request, "profile.html")
+
+
+
+
+# end this line
+
+
 
 @login_required
 def dashboardView(request):

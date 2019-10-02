@@ -25,16 +25,7 @@
 </nav>
 
 <!--  /* main content: please write your content here*/-->
-<div class="center">
-    {% block content %}
-    <h1>Login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Login</button>
-    </form>
-    {% endblock %}
-</div>
+
 
 <!--  /*footer part: do not write your code after this line*/-->
 <footer class="footer">

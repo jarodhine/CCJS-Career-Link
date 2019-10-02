@@ -25,13 +25,17 @@
 </nav>
 
 <!--  /* main content: please write your content here*/-->
-{% block content %}
-<div class="top">
-    <h1>Welcome, {{user.first_name}}</h1>
-    <a href="{% url 'logout_url' %}">Logout</a>
-</div>
-{% endblock %}
 
+<div class="centerLeft">
+    {% block content %}
+    <h1 align="center">Create New Account</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Register</button>
+    </form>
+    {% endblock %}
+</div>
 <!--  /*footer part: do not write your code after this line*/-->
 <footer class="footer">
     <p>Posted by: Jarod, Sid, Gerrard, Cheng Peng</p>

@@ -1,25 +1,10 @@
+{% extends "base.html" %}
 
- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css"
-    href="{% static "accounts/style.css" %}" >
-  </head>
-  <body>
-
-    <div class="centerLeft">
-        {% block content %}
-            <h1 align="center">Create New Account</h1>
-            <form method="POST">
-                {% csrf_token %}
-                {{form.as_p}}
-                <button type="submit">Register</button>
-            </form>
-        {% endblock %}
-    </div>
-
-  </body>
-</html>
+{% block content %}
+  <h1 align="center">Create New Account</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Register</button>
+  </form>
+{% endblock %}

@@ -1,27 +1,12 @@
- <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>JCU Career Link</title>
-    {% load static %}
-    <link rel="stylesheet" type="text/css"
-    href="{% static "accounts/style.css" %}" >
-  </head>
-  <body>
-    
-    <div class="center text">
-      {% block content %}
-          <h1>Welcome</h1>
-          {% if user.is_authenticated %}
-              <a href="{% url 'dashboard_url' %}">Dashboard</a>
-              <a href="{% url 'logout_url' %}">Logout</a>
+{% extends "base.html" %}
 
-              {% else %}
-                  <a href="{% url 'login_url' %}">Login</a>
-                  <a href="{% url 'register_url' %}">Register</a>
-          {% endif %}
-      {% endblock %}
-    </div>
-
-  </body>
-</html>
+{% block content %}
+  <h1>Welcome</h1>
+  {% if user.is_authenticated %}
+    <a href="{% url 'dashboard_url' %}">Dashboard</a>
+    <a href="{% url 'logout_url' %}">Logout</a>
+  {% else %}
+    <a href="{% url 'login_url' %}">Login</a>
+    <a href="{% url 'register_url' %}">Register</a>
+  {% endif %}
+{% endblock %}

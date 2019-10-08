@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JCU Career Link</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+
+<!--  /*nav bar*/-->
+
+<nav id='nav'>
+    <div class='logo'><a href="https://www.jcu.edu.au/">
+        <img src="{% static 'accounts/logo.png' %}" height="90" width="200"/>
+    </a>
+    </div>
+    <ul>
+        <li><a href="{% url 'home_url' %}">Home</a></li>
+        <li><a href="{% url 'home_url' %}">Search</a></li>
+        <li><a href = "{% url 'home_url'%}">Profile</a></li>
+    </ul>
+</nav>
+
+<!--  /* main content: please write your content here*/-->
+
+<div class="center">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+
+
+<!--  /*footer part: do not write your code after this line*/-->
+<footer class="footer">
+    <p>Created by: Jarod, Sid, Gerrard, Cheng Peng</p>
+    <p>Contact information: <a href="https://www.jcu.edu.au/">CCJS@my.jcu.edu.au</a></p>
+</footer>
+
+</body>
+
+
+</html>

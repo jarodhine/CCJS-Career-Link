@@ -6,6 +6,7 @@
     {% load static %}
     <link rel="stylesheet" type="text/css"
           href="{% static 'accounts/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -13,15 +14,11 @@
 </head>
 <body>
 
-<!--  /*nav bar*/-->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
     <a class="navbar-brand" href="#">
-        <img src="{% static 'images/jcu logo.png' %}" width="130" height="60" class="d-inline-block align-top"
-             alt="JCU logo">
+        <img src="{% static 'images/jcu logo.png' %}" width="130" height="60" class="d-inline-block align-top" alt="JCU logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -32,8 +29,7 @@
             </li>
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Profile
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,23 +52,35 @@
 </nav>
 <br>
 <!--  /* main content: please write your content here*/-->
-<div class = “header”>
-    <form>
-        <h1>Find Job Near You</h1>
-        <div class=“form-box”>
-            <input type = “text” class=“search-field job”
-                   placeholder =“Job” >
-            <input type = “text” class=“search-field location”
-                   placeholder =“Location” >
-            <button class=“search-btn”
-                    type=“button”>Search</button>
+<div class="container">
+    <div class="container-fluid">
+
+        <div class="card" style="width:300px">
+            <img src="{% static 'images/IDprototype.png' %}" alt="Image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">Percy</h4>
+                <p class="card-text">Some example text some example text. Percy is working on the profile part</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
         </div>
-    </form>
-</div></section>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div class="card" style="width:400px">
+            <div class="container text-white bg-primary">
+                <h1>CCJS</h1>
+            </div>
+            <div class="card-body">
+                <p class="card-text">The goal of the JCU Career Link project is to provide a communications platform in a regional area to promote job opportunities. The challenge of this is accommodating and integrating the different set of services required for the 3 distinct types of users, students, professors and employers.
+                </p><p>jcu.edu.au</p></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--  /*footer part: do not write your code after this line*/-->
 <br>
-<footer class="jumbotron text-center fixed-bottom" style="margin-bottom:0">
+<footer class="jumbotron text-center" style="margin-bottom:0"  >
     <p>Posted by: Jarod, Sid, Gerrard, Cheng Peng</p>
     <p>Contact information: <a href="https://www.jcu.edu.au/">student.example.name@my.jcu.edu.au</a>.</p>
 </footer>

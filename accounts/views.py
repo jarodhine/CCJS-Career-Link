@@ -14,8 +14,17 @@ def indexView(request):
 def searchView(request):
     return render(request, "search.html")
 
-def profileView(request):
-    return render(request, "profile.html")
+def sprofileView(request):
+    return render(request, "student-profile.html")
+
+def pprofileView(request):
+    return render(request, "professor-profile.html")
+
+def eprofileView(request):
+    return render(request, "employer-profile.html")
+
+def uprofileView(request):
+    return render(request, "unspecified-profile.html")
 
 
 

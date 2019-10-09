@@ -102,20 +102,51 @@ body {
 }
 /*You can add your css code down below */
 /*-------------------------------------------------*/
-.search-sec{
-    padding: 2rem;
+.header{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5)),url(“background.png”);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
 }
-.search-slt{
-    display: block;
-    width: 100%;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    color: #55595c;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    height: calc(3rem + 2px) !important;
-    border-radius:0;
+h1{
+    color: #fff;
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.search-field{
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+}
+.job{
+    width: 400px;
+}
+.location{
+    width: 200px;
+}
+.search-btn{
+    height: 50px;
+    width: 150px;
+    background: #ffeb3b;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+}
+.search-btn:hover{
+    background: #ffc107;
+    cursor: pointer;
+}
+.form-box{
+    background: rgba(0,0,0,0.5);
+    padding: 30px;
 }
 
 
@@ -140,12 +171,18 @@ body {
 /*You can add your css code above do not add your code after this line*/
 /*-------------------------------------------------*/
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    /*background-color:;*/
-    color: white;
-    text-align: center;
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*!*background-color:;*!*/
+    /*color: white;*/
+    /*text-align: center;*/
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:20px;
+    color:#fff;
 }
 

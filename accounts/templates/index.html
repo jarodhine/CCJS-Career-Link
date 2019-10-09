@@ -6,46 +6,84 @@
     {% load static %}
     <link rel="stylesheet" type="text/css"
           href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <!--  /*nav bar*/-->
 
-<nav id='nav'>
-    <div class='logo'><a href="https://www.jcu.edu.au/">
-        <img src="{% static 'images/jcu logo.png' %}" height="90" width="200"/>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'images/jcu logo.png' %}" width="130" height="60" class="d-inline-block align-top"
+             alt="JCU logo">
     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto" class="p-3 mb-2 bg-info text-white">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index_url' %}">Home<span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'student-profile_url'%}">Student</a>
+                    <a class="dropdown-item" href="#">Professor</a>
+                    <a class="dropdown-item" href="#">Employer</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Unspecified</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'search_url'%}">Search Profile</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Find" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find</button>
+        </form>
     </div>
-    <ul>
-        <li><a href="{% url 'index_url' %}">Home</a></li>
-        <li><a href="{% url 'search_url' %}">Search</a></li>
-        <li><a href = "{% url 'profile_url'%}">Profile</a></li>
-        <!--            <li><a></a></li>-->
-    </ul>
 </nav>
-
+<br>
 <!--  /* main content: please write your content here*/-->
+<<div class="container">
+    <div class="card" style="width:800px; height: 300px">
+        <div class="container text-white bg-info">
+            <h1>Welcome</h1>
+        </div>
+        <div class="card-body">
+            <p class="card text-center">
+            {% block content %}
 
-<div class="center">
+                {% if user.is_authenticated %}
+                <a href="{% url 'dashboard_url' %}">Dashboard</a>
+                <a href="{% url 'logout_url' %}">Logout</a>
 
-    {% block content %}
+                {% else %}
+                <a href="{% url 'login_url' %}">Login</a>
+                <a href="{% url 'register_url' %}">Register</a>
+                {% endif %}
 
-
-    <h1>Welcome</h1>
-    {% if user.is_authenticated %}
-    <a href="{% url 'dashboard_url' %}">Dashboard</a>
-    <a href="{% url 'logout_url' %}">Logout</a>
-
-    {% else %}
-    <a href="{% url 'login_url' %}">Login</a>
-    <a href="{% url 'register_url' %}">Register</a>
-    {% endif %}
-    {% endblock %}
+            {% endblock %}
+            </p>
+        </div>
+    </div>
 </div>
 
 
 <!--  /*footer part: do not write your code after this line*/-->
-<footer class="footer">
+<br>
+<footer class="jumbotron text-center fixed-bottom " style="margin-bottom:0">
     <p>Posted by: Jarod, Sid, Gerrard, Cheng Peng</p>
     <p>Contact information: <a href="https://www.jcu.edu.au/">student.example.name@my.jcu.edu.au</a>.</p>
 </footer>

@@ -6,7 +6,10 @@ from django.contrib import admin
 urlpatterns = [
     path('', views.indexView, name="index_url"),
     path('search/', views.searchView, name="search_url"),
-    path('profile/', views.profileView, name="profile_url"),
+    path('student-profile/', views.sprofileView, name="student-profile_url"),
+    path('professor-profile/', views.pprofileView, name="professor-profile_url"),
+    path('employer-profile/', views.eprofileView, name="employer-profile_url"),
+    path('unspecified-profile/', views.uprofileView, name="unspecified-profile_url"),
 
 
     path('dashboard/', views.dashboardView, name="dashboard_url"),

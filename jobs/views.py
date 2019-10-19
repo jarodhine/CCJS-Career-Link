@@ -2,8 +2,19 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .forms import CustomUserCreationForm
+from .models import Post
 
 # Create your views here.
+
+posts = [
+    {
+        'title': 'System Technician',
+        'requirements': 'Bachelors',
+        'description': 'Entry level technician working on retail database.',
+        'date': 'January 1, 2019',
+        'author': 'john doe'
+    }
+]
 
 def indexView(request):
     return render(request, 'index.html')
@@ -21,7 +32,10 @@ def registerView(request):
 
 #@login_required
 def dashboardView(request):
-    return render(request, 'dashboard.html')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'dashboard.html', context)
 
 #@login_required
 def profileView(request):

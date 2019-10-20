@@ -13,6 +13,20 @@ posts = [
         'description': 'Entry level technician working on retail database.',
         'date': 'January 1, 2019',
         'author': 'john doe'
+    },
+    {
+        'title': 'System Technician',
+        'requirements': 'Bachelors',
+        'description': 'Entry level technician working on retail database.',
+        'date': 'January 1, 2019',
+        'author': 'john doe'
+    },
+    {
+        'title': 'System Technician',
+        'requirements': 'Bachelors',
+        'description': 'Entry level technician working on retail database.',
+        'date': 'January 1, 2019',
+        'author': 'john doe'
     }
 ]
 
@@ -33,7 +47,7 @@ def registerView(request):
 @login_required(login_url='jobs/login')
 def dashboardView(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'dashboard.html', context)
 

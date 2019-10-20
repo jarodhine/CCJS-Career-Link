@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for post in posts %}
-        <h1>{{ post.title }}</h1>
-        <p>By {{ post.author.first_name }} {{ post.author.last_name }} on {{ post.date }}</p>
-        <p>{{ post.requirements }}</p>
-        <p>{{ post.description }}</p>
-        <p>Contact: {{ post.author.email }}</p>
-    {% endfor %}
+    <hr>
+    <div style="float: left;width: 45%">
+        {% for post in posts %}
+            <h1>{{ post.title }}</h1>
+            <p>By {{ post.author.first_name }} {{ post.author.last_name }} on {{ post.date }}</p>
+            <p>{{ post.requirements }}</p>
+            <p>{{ post.description }}</p>
+            <p>Contact: {{ post.author.email }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+    <div style="border: solid; margin-left: 50%;height: 100%">
+        <h3> Post New Job Form</h3>
+    </div>
 {% endblock %}

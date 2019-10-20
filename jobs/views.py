@@ -30,17 +30,17 @@ def registerView(request):
 
     return render(request, 'registration/register.html', {'form':form})
 
-#@login_required
+@login_required(login_url='jobs/login')
 def dashboardView(request):
     context = {
         'posts': posts
     }
     return render(request, 'dashboard.html', context)
 
-#@login_required
+@login_required(login_url='jobs/login')
 def profileView(request):
     return render(request, 'profile.html')
 
-#@login_required
+@login_required(login_url='jobs/login')
 def searchView(request):
     return render(request, 'search.html')

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
+    {% if user.userType == 'Employer' %}
+    <div style="margin-left: 20%;margin-right: 20%;text-align: center;">
+        <h3>Post New Job</h3>
+    </div>
+    {% endif %}
     <hr>
-    <div style="float: left;width: 45%">
+    <div style="margin-left: 20%;margin-right: 20%;">
         {% for post in posts %}
-            <h1>{{ post.title }}</h1>
+            <h1><a href="{% url 'detail_url' post.id %}">{{ post.title }}</a></h1>
             <p>By {{ post.author.first_name }} {{ post.author.last_name }} on {{ post.date }}</p>
             <p>{{ post.requirements }}</p>
-            <p>{{ post.description }}</p>
-            <p>Contact: {{ post.author.email }}</p>
             <hr>
         {% endfor %}
-    </div>
-    <div style="border: solid; margin-left: 50%;height: 100%">
-        <h3> Post New Job Form</h3>
     </div>
 {% endblock %}

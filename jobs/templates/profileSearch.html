@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class = "Search" style="margin: 10% 20% 10%;">
+    <div class = "Search-title bg-dark text-white" style="text-align: center;background-color:snow;">
+        <h1>Search Workers Near You</h1>
+        <div class="col-12 col-md-15 col-lg-25">
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search Worker or keywords">
+                    </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-dark" type="Search">Search</button>
+                    </div>
+                    <!--end of col-->
+                </div>
+            </form>
+</div>
+{% endblock %}

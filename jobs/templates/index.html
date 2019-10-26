@@ -2,8 +2,10 @@
 
 {% block content %}
   {% if user.is_authenticated %}
+    <div class = "card" style="margin: 5% 30%;text-align: center">
     <a href="{% url 'dashboard_url' %}">Dashboard</a>
     <a href="{% url 'logout_url' %}">Logout</a>
+    </div>
   {% else %}
     <div class = "card" style="margin: 5% 30%;">
     <div class = "card-title text-white bg-success" style="text-align: center;background-color: purple-gradient">

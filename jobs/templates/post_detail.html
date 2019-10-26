@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <hr>
+    <div style="margin-left: 20%;margin-right: 20%;">
+        <h1>{{ object.title }}</h1>
+        <p>By {{ object.author.first_name }} {{ object.author.last_name }} on {{ post.date }}</p>
+        <p>{{ object.requirements }}</p>
+        <p>{{ object.description }}</p>
+        <p>Contact: {{ object.author.email }}</p>
+        <hr>
+    </div>
+{% endblock %}
